@@ -1,17 +1,28 @@
+import java.io.Serializable;
+import java.util.Map;
 import java.util.TreeMap;
 
-public class Document {
-    protected int ID;
+public class Document implements Serializable {
+    protected String ID;
     protected String name;
-    protected TreeMap<String, String> tags=new TreeMap<String, String>();
-    protected String path;
-    protected String link;
+    protected Map<String, Object> tags=new TreeMap<String, Object>();
+    protected String location;
 
-    public Document(int ID, String name, TreeMap<String, String> tags, String path, String link) {
+    public Document(String ID, String name, String location) {
         this.ID = ID;
         this.name = name;
-        this.tags = tags;
-        this.path = path;
-        this.link = link;
+        this.location = location;
+    }
+
+    public void setTags(String key, Object obj) {
+        tags.put(key,obj);
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public Object getID() {
+        return ID;
     }
 }
