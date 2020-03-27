@@ -4,8 +4,8 @@ import java.io.*;
 public class CatalogUtil {
     public static void save(Catalog catalog)
             throws IOException {
-        try (var oos = new ObjectOutputStream(
-                new FileOutputStream(catalog.getPath()))) {
+        FileOutputStream saveFile = new FileOutputStream(catalog.getPath());
+        try (var oos = new ObjectOutputStream(saveFile)) {
             oos.writeObject(catalog);
         }
     }
