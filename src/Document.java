@@ -18,8 +18,8 @@ public class Document implements Serializable {
         tags.put(key,obj);
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public String getLocation() {
+        return location;
     }
 
     public Object getID() {

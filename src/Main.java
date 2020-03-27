@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws InvalidCatalogException, IOException {
+    public static void main(String[] args) throws InvalidCatalogException, IOException, ClassNotFoundException {
         createSave();
         loadView();
     }
@@ -16,10 +16,10 @@ public class Main {
         CatalogUtil.save(catalog);
     }
 
-    private static void loadView() throws InvalidCatalogException {
+    private static void loadView() throws InvalidCatalogException, IOException, ClassNotFoundException {
         Catalog catalog = CatalogUtil.load("fileTest.txt");
         Document doc = catalog.findById("java1");
-        System.out.println(doc.getID());
+        System.out.println(doc.getLocation());
         CatalogUtil.view(doc);
     }
 }

@@ -10,6 +10,7 @@ public class Catalog  implements Serializable {
     public Catalog(String java_resources, String s) {
         this.path = s;
     }
+
     public void add(Document doc) {
         documents.add(doc);
     }
